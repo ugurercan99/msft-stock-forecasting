@@ -1,0 +1,3 @@
+ModelFamily,CandidateName,hidden_dim,num_layers,dropout,effective_dropout,lr,loss_name,input_dim,output_dim,model_path,total_trainable_params,selected_val_RMSE,selected_val_MAE,selected_val_MAPE,selected_val_R2,selected_val_Directional_Accuracy
+LSTM,C,64,2,0.0,0.0,0.0005,SmoothL1Loss,5,1,../models/best_lstm.pth,51521,18.263415278815852,15.321479797363281,5.211174011230469,0.7000438570976257,51.056910569105696
+GRU,F,128,2,0.2,0.2,0.0005,SmoothL1Loss,5,1,../models/best_gru.pth,151041,9.04968492159676,7.4619927406311035,2.656245708465576,0.9263520240783691,49.43089430894309

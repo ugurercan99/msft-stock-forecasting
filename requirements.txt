@@ -1,0 +1,13 @@
+yfinance
+pandas
+numpy
+matplotlib
+scikit-learn
+torch
+torchvision
+torchaudio
+neuralforecast
+jupyter
+ipykernel
+tqdm
+seaborn
