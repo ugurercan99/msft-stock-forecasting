@@ -24,8 +24,10 @@ development process, as required by the brief.
 
 ## Data
 
-Daily MSFT OHLCV data (2011–2026) is pulled live via the `yfinance` API
-(see `scripts/test_yf.py` for the minimal fetch call). The preprocessed,
+Daily MSFT OHLCV data (2010–2026, per `notebooks/01_data_prep.ipynb`'s
+`START_DATE`) is pulled live via the `yfinance` API (see
+`scripts/test_yf.py` for a minimal, unrelated connectivity check using its
+own date range). The preprocessed,
 windowed train/val/test tensors used for training are included under
 `data/` (`X_*.npy`, `y_*.npy`, plus the corresponding date indices) so the
 notebooks can be re-run without needing to regenerate the feature windows
@@ -85,8 +87,10 @@ jupyter notebook notebooks/01_data_prep.ipynb
 ```
 
 Run the four notebooks in order (`01` → `02` → `03` → `04`). `01` will
-re-fetch and re-window the data (or you can start directly from the
-provided `.npy` files in `data/` and skip to `02`/`03`); `02` and `03` will
+re-fetch and re-window the data. `02` (RNNs) needs only the provided `.npy`
+files in `data/`, so you can start directly there and skip `01`; `03`
+(PatchTST) re-downloads its own raw OHLCV via `yfinance` regardless of
+`data/`, so it always needs live network access. `02` and `03` will
 overwrite the checkpoints in `models/` and the tables/plots in `outputs/`
 with a fresh run.
 
